@@ -1,0 +1,23 @@
+{
+  "name": "stayzello",
+  "version": "1.0.0",
+  "description": "Server for StayZello",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file=.env src/index.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Inkersal Mahendran",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0"
+  }
+}
