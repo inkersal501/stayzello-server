@@ -4,7 +4,7 @@ import {
   getHostelById,
   updateHostel,
   deleteHostel
-} from "../services/hostel.services.js";
+} from "../services/hostel.service.js";
 
 // Create hostel
 export const createHostelController = async (req, res) => {
@@ -19,7 +19,7 @@ export const createHostelController = async (req, res) => {
 // Get all hostels
 export const getAllHostelsController = async (req, res) => {
   try {
-    const hostels = await getAllHostels();
+    const hostels = await getAllHostels(req.user.id);
     res.status(200).json({ success: true, data: hostels });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { 
   generateAccessToken,
@@ -20,9 +20,7 @@ export const userRegisterService = async (data) => {
     password: hashedPassword,
   });
 
-  const token = generateToken(user._id, "user");
-
-  return { user, token };
+  return user;
 };
 
 export const userLoginService = async ({ email, password }) => {

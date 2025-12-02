@@ -1,4 +1,4 @@
-import Owner from "../models/Owner.js";
+import Owner from "../models/owner.model.js";
 import bcrypt from "bcryptjs";
 import { 
   generateAccessToken,
@@ -18,11 +18,9 @@ export const ownerRegisterService = async (data) => {
     email,
     phone,
     password: hashedPassword,
-  });
+  }); 
 
-  const token = generateToken(owner._id, "owner");
-
-  return { owner, token };
+  return owner;
 };
 
 export const ownerLoginService = async ({ email, password }) => {
